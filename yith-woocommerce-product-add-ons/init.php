@@ -3,7 +3,7 @@
  * Plugin Name: YITH WooCommerce Product Add-ons & Extra Options
  * Plugin URI: https://yithemes.com/themes/plugins/yith-woocommerce-product-add-ons/
  * Description: <code><strong>YITH WooCommerce Product Add-ons & Extra Options</strong></code> is the plugin that allows you to create new options for WooCommerce products. <a href="https://yithemes.com/" target="_blank">Get more plugins for your e-commerce shop on <strong>YITH</strong></a>
- * Version: 4.15.0
+ * Version: 4.16.0
  * Requires PHP: 7.4
  * Author: YITH
  * Author URI: https://yithemes.com/
@@ -13,8 +13,8 @@
  * Domain Path: /languages/
  * Requires at least: 6.5
  * Tested up to: 6.7
- * WC requires at least: 9.2
- * WC tested up to: 9.4
+ * WC requires at least: 9.3
+ * WC tested up to: 9.5
  * Requires Plugins: woocommerce
  *
  * @author  YITH <plugins@yithemes.com>
@@ -42,7 +42,7 @@ defined( 'ABSPATH' ) || exit;
 
 ! defined( 'YITH_WAPO' ) && define( 'YITH_WAPO', true );
 
-! defined( 'YITH_WAPO_VERSION' ) && define( 'YITH_WAPO_VERSION', '4.15.0' );
+! defined( 'YITH_WAPO_VERSION' ) && define( 'YITH_WAPO_VERSION', '4.16.0' );
 ! defined( 'YITH_WAPO_FILE' ) && define( 'YITH_WAPO_FILE', __FILE__ );
 ! defined( 'YITH_WAPO_URL' ) && define( 'YITH_WAPO_URL', plugin_dir_url( __FILE__ ) );
 ! defined( 'YITH_WAPO_DIR' ) && define( 'YITH_WAPO_DIR', plugin_dir_path( __FILE__ ) );
