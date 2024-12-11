@@ -3,7 +3,7 @@
  * Plugin Name: YITH WooCommerce Product Add-ons & Extra Options
  * Plugin URI: https://yithemes.com/themes/plugins/yith-woocommerce-product-add-ons/
  * Description: <code><strong>YITH WooCommerce Product Add-ons & Extra Options</strong></code> is the plugin that allows you to create new options for WooCommerce products. <a href="https://yithemes.com/" target="_blank">Get more plugins for your e-commerce shop on <strong>YITH</strong></a>
- * Version: 4.16.0
+ * Version: 4.16.1
  * Requires PHP: 7.4
  * Author: YITH
  * Author URI: https://yithemes.com/
@@ -42,7 +42,7 @@ defined( 'ABSPATH' ) || exit;
 
 ! defined( 'YITH_WAPO' ) && define( 'YITH_WAPO', true );
 
-! defined( 'YITH_WAPO_VERSION' ) && define( 'YITH_WAPO_VERSION', '4.16.0' );
+! defined( 'YITH_WAPO_VERSION' ) && define( 'YITH_WAPO_VERSION', '4.16.1' );
 ! defined( 'YITH_WAPO_FILE' ) && define( 'YITH_WAPO_FILE', __FILE__ );
 ! defined( 'YITH_WAPO_URL' ) && define( 'YITH_WAPO_URL', plugin_dir_url( __FILE__ ) );
 ! defined( 'YITH_WAPO_DIR' ) && define( 'YITH_WAPO_DIR', plugin_dir_path( __FILE__ ) );
@@ -63,13 +63,10 @@ defined( 'ABSPATH' ) || exit;
 ! defined( 'YITH_WAPO_VIEWS_PATH' ) && define( 'YITH_WAPO_VIEWS_PATH', YITH_WAPO_DIR . 'views/' );
 ! defined( 'YITH_WAPO_COMPATIBILITY_PATH' ) && define( 'YITH_WAPO_COMPATIBILITY_PATH', YITH_WAPO_INCLUDES_PATH . '/compatibility' );
 
-/**
- * Plugin Framework Version Check
- */
-if ( ! function_exists( 'yit_maybe_plugin_fw_loader' ) && file_exists( YITH_WAPO_DIR . '/plugin-fw/init.php' ) ) {
-	require_once YITH_WAPO_DIR . 'plugin-fw/init.php';
+// Plugin Framework Loader.
+if ( file_exists( plugin_dir_path( __FILE__ ) . 'plugin-fw/init.php' ) ) {
+    require_once plugin_dir_path( __FILE__ ) . 'plugin-fw/init.php';
 }
-yit_maybe_plugin_fw_loader( YITH_WAPO_DIR );
 
 /**
  * Plugin Activation
@@ -101,7 +98,7 @@ if ( ! function_exists( 'yith_wapo_init' ) ) {
 			require_once 'includes/class-yith-wapo.php';
             require_once 'includes/compatibility/class-yith-wapo-compatibility.php';
 			require_once YITH_WAPO_DIR . 'includes/yith-wapo-functions.php';
-			load_plugin_textdomain( YITH_WAPO_LOCALIZE_SLUG, false, YITH_WAPO_DIR_NAME . '/languages' );
+            yith_plugin_fw_load_plugin_textdomain( 'yith-woocommerce-product-add-ons', basename( dirname( __FILE__ ) ) . '/languages' );
 			YITH_WAPO_Install();
 			YITH_WAPO();
 		}

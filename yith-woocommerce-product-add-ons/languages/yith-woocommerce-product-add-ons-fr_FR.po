@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: YITH WooCommerce Products Add-ons\n"
 "Report-Msgid-Bugs-To: YITH <plugins@yithemes.com>\n"
-"POT-Creation-Date: 2024-11-13 13:43:34+00:00\n"
+"POT-Creation-Date: 2024-12-11 08:49:11+00:00\n"
 "PO-Revision-Date: 2021-07-21 17:09+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -391,127 +391,127 @@ msgid "This is not a product page!"
 msgstr "Ce n'est pas une page produit!"
 
 #. translators: [ADMIN] Add-on name.
-#: includes/class-yith-wapo.php:199 views/addons/html_heading.php:19
+#: includes/class-yith-wapo.php:185 views/addons/html_heading.php:19
 msgid "Heading"
 msgstr ""
 
 #. translators: [ADMIN] Add-on name.
-#: includes/class-yith-wapo.php:204 views/addons/html_text.php:19
+#: includes/class-yith-wapo.php:190 views/addons/html_text.php:19
 msgid "Text"
 msgstr "Texte"
 
 #. translators: [ADMIN] Add-on name.
-#: includes/class-yith-wapo.php:209 views/addons/html_separator.php:19
+#: includes/class-yith-wapo.php:195 views/addons/html_separator.php:19
 msgid "Separator"
 msgstr ""
 
 #. translators: [ADMIN] Add-on name.
 #. translators: [ADMIN] Add-on name (option).
-#: includes/class-yith-wapo.php:226 includes/class-yith-wapo.php:228
+#: includes/class-yith-wapo.php:212 includes/class-yith-wapo.php:214
 msgid "Checkbox"
 msgstr "Case à cocher"
 
 #. translators: [ADMIN] Add-on name.
-#: includes/class-yith-wapo.php:233
+#: includes/class-yith-wapo.php:219
 msgid "Radio"
 msgstr ""
 
 #. translators: [ADMIN] Add-on name (option).
-#: includes/class-yith-wapo.php:235
+#: includes/class-yith-wapo.php:221
 #, fuzzy
 msgid "Radio button"
 msgstr "Bouton radio"
 
 #. translators: [ADMIN] Add-on name.
-#: includes/class-yith-wapo.php:240
+#: includes/class-yith-wapo.php:226
 msgid "Input text"
 msgstr ""
 
 #. translators: [ADMIN] Add-on name (option).
-#: includes/class-yith-wapo.php:242
+#: includes/class-yith-wapo.php:228
 msgid "Input field"
 msgstr ""
 
 #. translators: [ADMIN] Add-on name.
 #. translators: [ADMIN] Add-on name (option).
-#: includes/class-yith-wapo.php:247 includes/class-yith-wapo.php:249
+#: includes/class-yith-wapo.php:233 includes/class-yith-wapo.php:235
 msgid "Textarea"
 msgstr "Champs de texte"
 
 #. translators: [ADMIN] Add-on name.
 #. translators: [ADMIN] Add-on name (option).
-#: includes/class-yith-wapo.php:254 includes/class-yith-wapo.php:256
+#: includes/class-yith-wapo.php:240 includes/class-yith-wapo.php:242
 msgid "Color swatch"
 msgstr ""
 
 #. translators: [ADMIN] Add-on name.
 #. translators: [ADMIN] Add-on name (option).
-#: includes/class-yith-wapo.php:261 includes/class-yith-wapo.php:263
+#: includes/class-yith-wapo.php:247 includes/class-yith-wapo.php:249
 msgid "Number"
 msgstr "Nombre"
 
 #. translators: [ADMIN] Add-on name.
-#: includes/class-yith-wapo.php:268
+#: includes/class-yith-wapo.php:254
 msgid "Select"
 msgstr "Liste déroulante"
 
 #. translators: [ADMIN] Add-on name (option).
-#: includes/class-yith-wapo.php:270
+#: includes/class-yith-wapo.php:256
 #, fuzzy
 msgid "Select item"
 msgstr "Sélectionner les termes"
 
 #. translators: [ADMIN] Add-on name.
 #. translators: [ADMIN] Add-on name (option).
-#: includes/class-yith-wapo.php:275 includes/class-yith-wapo.php:277
+#: includes/class-yith-wapo.php:261 includes/class-yith-wapo.php:263
 msgid "Label or image"
 msgstr ""
 
 #. translators: [ADMIN] Add-on name.
 #. translators: [ADMIN] Add-on name (option).
-#: includes/class-yith-wapo.php:282 includes/class-yith-wapo.php:284
+#: includes/class-yith-wapo.php:268 includes/class-yith-wapo.php:270
 msgid "Product"
 msgstr ""
 
 #. translators: [ADMIN] Add-on name.
 #. translators: [ADMIN] Add-on name (option).
-#: includes/class-yith-wapo.php:289 includes/class-yith-wapo.php:291
+#: includes/class-yith-wapo.php:275 includes/class-yith-wapo.php:277
 msgid "Date"
 msgstr "Date"
 
 #. translators: [ADMIN] Add-on name.
-#: includes/class-yith-wapo.php:296
+#: includes/class-yith-wapo.php:282
 msgid "File upload"
 msgstr ""
 
 #. translators: [ADMIN] Add-on name (option).
-#: includes/class-yith-wapo.php:298
+#: includes/class-yith-wapo.php:284
 msgid "File uploader"
 msgstr ""
 
 #. translators: [ADMIN] Add-on name.
 #. translators: [ADMIN] Add-on name (option).
-#: includes/class-yith-wapo.php:303 includes/class-yith-wapo.php:305
+#: includes/class-yith-wapo.php:289 includes/class-yith-wapo.php:291
 #, fuzzy
 msgid "Color picker"
 msgstr "Sélectionner une couleur"
 
 #. translators: [ADMIN] Add-on name.
 #. translators: [ADMIN] Add-on name (option).
-#: includes/class-yith-wapo.php:310 includes/class-yith-wapo.php:312
+#: includes/class-yith-wapo.php:296 includes/class-yith-wapo.php:298
 msgid "HTML Heading"
 msgstr ""
 
 #. translators: [ADMIN] Add-on name.
 #. translators: [ADMIN] Add-on name (option).
-#: includes/class-yith-wapo.php:317 includes/class-yith-wapo.php:319
+#: includes/class-yith-wapo.php:303 includes/class-yith-wapo.php:305
 #, fuzzy
 msgid "HTML Text"
 msgstr "Texte"
 
 #. translators: [ADMIN] Add-on name.
 #. translators: [ADMIN] Add-on name (option).
-#: includes/class-yith-wapo.php:324 includes/class-yith-wapo.php:326
+#: includes/class-yith-wapo.php:310 includes/class-yith-wapo.php:312
 msgid "HTML Separator"
 msgstr ""
 
@@ -709,7 +709,7 @@ msgstr ""
 msgid "options"
 msgstr "options"
 
-#: init.php:151
+#: init.php:148
 msgid ""
 "You can't activate the free version of YITH WooCommerce Product Add-ons & "
 "Extra Options while you are using the premium one."
@@ -1743,7 +1743,7 @@ msgctxt "[FRONT] Percentage done when uploading a file on an add-on type File."
 msgid "done"
 msgstr ""
 
-#: includes/class-yith-wapo.php:1004
+#: includes/class-yith-wapo.php:990
 msgctxt "[ADMIN] String added to the add-on title when is duplicated"
 msgid "Copy"
 msgstr ""
@@ -1762,7 +1762,7 @@ msgctxt "Add-on editor panel > Add a new + add-on name (masc)"
 msgid "Add a new"
 msgstr "Ajouter un nouveau"
 
-#: init.php:118
+#: init.php:115
 #, fuzzy
 msgctxt "[ADMIN] Message when WC is not activated on the site"
 msgid ""

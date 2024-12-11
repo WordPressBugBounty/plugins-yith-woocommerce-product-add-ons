@@ -105,8 +105,6 @@ if ( ! class_exists( 'YITH_WAPO' ) ) {
 				$this->wpml = YITH_WAPO_WPML::get_instance();
 			}
 
-			// Load Plugin Framework.
-			add_action( 'plugins_loaded', array( $this, 'plugin_fw_loader' ), 15 );
 
 			add_action( 'admin_init', array( $this, 'manage_actions' ) );
 
@@ -138,18 +136,6 @@ if ( ! class_exists( 'YITH_WAPO' ) ) {
 			add_filter( 'woocommerce_rest_prepare_shop_order_object', array( $this, 'filter_addons_metas' ), 100, 3 );
 		}
 
-		/**
-		 * Load Plugin Framework
-		 */
-		public function plugin_fw_loader() {
-			if ( ! defined( 'YIT_CORE_PLUGIN' ) ) {
-				global $plugin_fw_data;
-				if ( ! empty( $plugin_fw_data ) ) {
-					$plugin_fw_file = array_shift( $plugin_fw_data );
-					require_once $plugin_fw_file;
-				}
-			}
-		}
 
 		/**
 		 * Manage the actions of admin panel.
