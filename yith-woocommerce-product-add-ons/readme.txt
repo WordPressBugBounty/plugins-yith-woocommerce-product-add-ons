@@ -4,7 +4,7 @@ Contributors: yithemes
 Tags: woocommerce product addons, WooCommerce product fields, woocommerce product options, woocommerce custom fields, product add-ons for woocommerce
 Requires at least: 6.6
 Tested up to: 6.8
-Stable tag: 4.20.0
+Stable tag: 4.21.0
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -118,6 +118,12 @@ You can report security bugs through the Patchstack Vulnerability Disclosure Pro
 11. Product page with different options (5/5)
 
 == Changelog ==
+= 4.21.0 – Released on 15 May 2025 =
+
+* New: support for WooCommerce 9.8
+* Fix: tooltip position fixed
+* Update: YITH plugin framework
+
 = 4.20.0 – Released on 16 April 2025 =
 
 * New: support for WordPress 6.8
@@ -125,7 +131,7 @@ You can report security bugs through the Patchstack Vulnerability Disclosure Pro
 
 = 4.19.0 – Released on 26 March 2025 =
 
-* New: support for WooCommerce 9.7
+* New: support for WooCommerce 9.8
 * Update: YITH plugin framework
 
 = 4.18.0 – Released on 24 February 2025 =

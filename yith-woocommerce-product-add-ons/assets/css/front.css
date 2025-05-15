@@ -114,7 +114,8 @@ form.cart:has(#yith-wapo-container .yith-wapo-block),
 .yith-wapo-block .yith-wapo-addon .yith-wapo-option .tooltip {
   display: block;
   position: absolute;
-  top: 0;
+  left: 0%;
+  margin-top: -50px;
   opacity: 1 !important;
   width: 100%;
 }
