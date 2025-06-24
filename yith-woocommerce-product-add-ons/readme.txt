@@ -4,7 +4,7 @@ Contributors: yithemes
 Tags: woocommerce product addons, WooCommerce product fields, woocommerce product options, woocommerce custom fields, product add-ons for woocommerce
 Requires at least: 6.6
 Tested up to: 6.8
-Stable tag: 4.21.0
+Stable tag: 4.22.0
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -42,7 +42,7 @@ See the plugin in action:
 * Choose where to show the addons on the Product Page (before or after the "Add to Cart" button)
 * Enter an optional title for each option block and choose which format to use (h1, h2, h3, etc.)
 * Enter a name and a description for each option
-* Display an optional tooltip for each option and customize its colors and position
+* Display an optional tooltip for each option
 * Choose whether to offer the option for free (product price does not change when selected)
 * Choose whether the option has a fixed or percentage cost that increases the product price, or whether to offer a discount on the product price when the option is selected
 * Set a background and padding for the option block, and customize the border, text, and highlight colors.
@@ -118,6 +118,11 @@ You can report security bugs through the Patchstack Vulnerability Disclosure Pro
 11. Product page with different options (5/5)
 
 == Changelog ==
+= 4.22.0 – Released on24 June 2025 =
+
+* New: support for WooCommerce 10.0
+* Update: YITH plugin framework
+
 = 4.21.0 – Released on 15 May 2025 =
 
 * New: support for WooCommerce 9.8
