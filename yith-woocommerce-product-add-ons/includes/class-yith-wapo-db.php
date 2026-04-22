@@ -219,11 +219,12 @@ if ( ! class_exists( 'YITH_WAPO_DB' ) ) {
             }
 
             // Search box.
-            if ( isset( $query_args['s'] ) ) {
-                if ( ! empty( $query_args['s'] ) ){
-                    $query_search = "( name LIKE '%" . $query_args['s'] . "%' ) 
-                AND ";
-                }
+            if ( isset( $query_args['s'] ) && ! empty( $query_args['s'] ) ) {
+
+                global $wpdb;
+
+                $search = esc_sql( $wpdb->esc_like( $query_args['s'] ) );
+                $query_search = "( name LIKE '%{$search}%' ) AND ";
             }
 
             $product_id = $product->get_id();
