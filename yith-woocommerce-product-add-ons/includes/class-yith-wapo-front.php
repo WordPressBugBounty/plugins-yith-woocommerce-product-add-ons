@@ -425,7 +425,23 @@ if ( ! class_exists( 'YITH_WAPO_Front' ) ) {
 				}
 			}
 
-			$product = wc_get_product( $product_id );
+            $product_id = absint( $product_id );
+            $product    = $product_id ? wc_get_product( $product_id ) : false;
+
+            if (
+                ! ( $product instanceof WC_Product ) ||
+                'publish' !== $product->get_status() ||
+                ! $product->is_visible()
+            ) {
+                wp_send_json(
+                    array(
+                        'html'       => '',
+                        'addons'     => array(),
+                        'quantities' => array(),
+                    ),
+                    404
+                );
+            }
 
             ob_start();
 			$this->print_blocks();
@@ -623,7 +639,7 @@ if ( ! class_exists( 'YITH_WAPO_Front' ) ) {
 			if ( isset( $_POST['data']['product_id'] ) && $_POST['data']['product_id'] ) {
 				$product_id = $_POST['data']['product_id'];
 				$product    = wc_get_product( $product_id );
-				if ( $product instanceof WC_Product ) {
+                if ( $product instanceof WC_Product && $product->is_visible()) {
 					if ( $product instanceof WC_Product_Variable && empty( $product->get_default_attributes() ) ) {
 						$price = 0;
 					} else {
@@ -677,7 +693,7 @@ if ( ! class_exists( 'YITH_WAPO_Front' ) ) {
 			if ( isset( $_POST['product_id'] ) && $_POST['product_id'] ) {
 				$product_id = $_POST['product_id'];
 				$product    = wc_get_product( $product_id );
-				if ( $product instanceof WC_Product ) {
+                if ( $product instanceof WC_Product && $product->is_visible()) {
 					$product_price      = $product->get_price();
 					$product_price_html = $product->get_price_html();
 

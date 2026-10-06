@@ -89,7 +89,7 @@ if ( ! class_exists( 'YITH_WAPO_DB' ) ) {
             // Search box.
             if ( isset( $conditions['s'] ) ) {
                 if ( ! empty( $conditions['s'] ) ){
-                    $conditions['name'] = "'%" . $conditions['s'] . "%'";
+                    $conditions['name'] = "'%" . esc_sql($wpdb->esc_like($conditions['s'])) . "%'";
                 }
                 unset( $conditions['s'] );
             }
