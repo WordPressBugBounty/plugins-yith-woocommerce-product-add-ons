@@ -372,14 +372,50 @@ if ( ! class_exists( 'YITH_WAPO_Cart' ) ) {
 				}
 			}
 
-			if ( isset( $post_data['yith_wapo_product_qty'] ) && is_array( $post_data['yith_wapo_product_qty'] ) ) {
-				foreach ( $post_data['yith_wapo_product_qty'] as $key => $value ) {
-					if ( $key && $value ) {
-						$cart_item_data['yith_wapo_qty_options'][ $key ] = $value;
-					}
-				}
-			}
+            $posted_quantities = $post_data['yith_wapo_product_qty'] ?? array();
 
+            if ( is_array( $posted_quantities ) && ! empty( $data ) ) {
+                foreach ( $data as $key => $selected_value ) {
+
+                    if ( ! array_key_exists( $key, $posted_quantities ) ) {
+                        continue;
+                    }
+
+                    if ( is_array( $selected_value ) ) {
+                        $selected_value = reset( $selected_value );
+                    }
+
+                    if ( ! is_scalar( $selected_value ) || '' === (string) $selected_value ) {
+                        continue;
+                    }
+
+                    $ids = YITH_WAPO::get_instance()->split_addon_and_option_ids(
+                        $key,
+                        $selected_value
+                    );
+
+                    if ( ! is_array( $ids ) || ! isset( $ids['addon_id'], $ids['option_id'] ) ) {
+                        continue;
+                    }
+
+                    $info = yith_wapo_get_option_info(
+                        $ids['addon_id'],
+                        $ids['option_id'],
+                        false
+                    );
+
+                    if ( 'product' !== ( $info['addon_type'] ?? '' ) ) {
+                        continue;
+                    }
+
+                    $raw_quantity = $posted_quantities[ $key ];
+
+                    $cart_item_data['yith_wapo_qty_options'][ $key ] =
+                        ( is_scalar( $raw_quantity ) && is_numeric( $raw_quantity ) )
+                            ? max( 0, (int) $raw_quantity )
+                            : 1;
+                }
+            }
 			return apply_filters( 'yith_wapo_add_cart_item_data', $cart_item_data, $product_id, $post_data );
 		}
 
@@ -1216,7 +1252,18 @@ if ( ! class_exists( 'YITH_WAPO_Cart' ) ) {
 			$price_sale   = $info['price_sale'] ?? '';
 			$addon_type   = $info['addon_type'] ?? '';
 
-			$option_product_qty = $cart_item['yith_wapo_qty_options'][ $key ] ?? 1;
+
+            $option_product_qty = 1;
+
+            if ( 'product' === $addon_type ) {
+                $raw_quantity = $cart_item['yith_wapo_qty_options'][ $key ] ?? 1;
+
+                $option_product_qty = (
+                    is_scalar( $raw_quantity ) && is_numeric( $raw_quantity )
+                )
+                    ? max( 0, (int) $raw_quantity )
+                    : 1;
+            }
 
 			$addon_price      = 0;
 			$addon_price_sale = '';

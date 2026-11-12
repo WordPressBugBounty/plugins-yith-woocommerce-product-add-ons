@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: YITH WooCommerce Products Add-ons\n"
 "Report-Msgid-Bugs-To: YITH <plugins@yithemes.com>\n"
-"POT-Creation-Date: 2026-10-06 09:46:35+00:00\n"
+"POT-Creation-Date: 2026-11-12 12:47:45+00:00\n"
 "PO-Revision-Date: 2021-06-30 17:02:53+0000\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
@@ -264,38 +264,38 @@ msgid "Block name is required"
 msgstr "Todas as opções necessárias"
 
 #. translators: [ADMIN] Options tab.
-#: includes/class-yith-wapo-admin.php:557
+#: includes/class-yith-wapo-admin.php:567
 msgid "Options Blocks"
 msgstr ""
 
 #. translators: [ADMIN] Options tab.
-#: includes/class-yith-wapo-admin.php:566
+#: includes/class-yith-wapo-admin.php:576
 msgid "General Settings"
 msgstr ""
 
 #. translators: [ADMIN] Options tab.
-#: includes/class-yith-wapo-admin.php:574
+#: includes/class-yith-wapo-admin.php:584
 msgid "Style"
 msgstr ""
 
-#: includes/class-yith-wapo-admin.php:578
+#: includes/class-yith-wapo-admin.php:588
 msgid "Configure style options to customize the add-ons you create."
 msgstr ""
 
 #. translators: [FRONT] Label shown on cart for add-on type Upload
-#: includes/class-yith-wapo-cart.php:1411
+#: includes/class-yith-wapo-cart.php:1458
 msgid "Attached file"
 msgstr "Arquivo anexado"
 
 #. translators: [ADMIN] Message added to order notes when add-on type Product
 #. has stock
-#: includes/class-yith-wapo-cart.php:1494
+#: includes/class-yith-wapo-cart.php:1541
 msgid "Stock levels reduced for addons type product:"
 msgstr ""
 
 #. translators: Label printed in the add-on type Date, when activating the
 #. timepicker.
-#: includes/class-yith-wapo-front.php:130
+#: includes/class-yith-wapo-front.php:129
 msgid "Set time"
 msgstr ""
 
@@ -303,7 +303,7 @@ msgstr ""
 #. timepicker.
 #. translators: Add-on editor panel.
 #. translators: [ADMIN] Edit block page > Save button
-#: includes/class-yith-wapo-front.php:132
+#: includes/class-yith-wapo-front.php:131
 #: views/addon-editor/addon-editor.php:386
 #: views/block-editor/block-editor.php:307
 msgid "Save"
@@ -312,204 +312,204 @@ msgstr ""
 #. translators: Label printed if minimum value is 1.
 #. translators: [FRONT] Message giving the error after checking minimum and
 #. maximum quantity when adding to cart
-#: includes/class-yith-wapo-front.php:134
-#: includes/class-yith-wapo-front.php:174
+#: includes/class-yith-wapo-front.php:133
+#: includes/class-yith-wapo-front.php:173
 #, fuzzy
 msgid "Please, select an option"
 msgstr "Ver opções"
 
 #. translators: Label printed if minimum value is more than 1. %d is the number
 #. of options.
-#: includes/class-yith-wapo-front.php:136
+#: includes/class-yith-wapo-front.php:135
 msgid "Please, select at least %d options"
 msgstr ""
 
 #. translators: Label printed for exact selection value. %d is the number of
 #. options.
-#: includes/class-yith-wapo-front.php:138
+#: includes/class-yith-wapo-front.php:137
 #, fuzzy
 msgid "Please, select %d options"
 msgstr "Ver opções"
 
 #. translators: [FRONT] Error when the user select more than allowed options (
 #. min/max feature ).
-#: includes/class-yith-wapo-front.php:140
+#: includes/class-yith-wapo-front.php:139
 msgid "More options than allowed have been selected"
 msgstr ""
 
 #. translators: [FRONT] Message error when the value of the add-on type Number
 #. is below minimum accepted.
-#: includes/class-yith-wapo-front.php:166
+#: includes/class-yith-wapo-front.php:165
 msgid "The value is less than the minimum. The minimum value is:"
 msgstr ""
 
 #. translators: [FRONT] Message error when total of add-ons type numbers does
 #. not exceeds the minimum set in the configuration
-#: includes/class-yith-wapo-front.php:168
+#: includes/class-yith-wapo-front.php:167
 msgid "The value is greater than the maximum. The maximum value is:"
 msgstr ""
 
 #. translators: [FRONT] Message error when total of add-ons type numbers does
 #. not exceeds the minimum set in the configuration
-#: includes/class-yith-wapo-front.php:170
+#: includes/class-yith-wapo-front.php:169
 msgid "The sum of the numbers is below the minimum. The minimum value is:"
 msgstr ""
 
 #. translators: [FRONT] Message error when total of add-ons type numbers
 #. exceeds the maximum set in the configuration
-#: includes/class-yith-wapo-front.php:172
+#: includes/class-yith-wapo-front.php:171
 msgid "The sum of the numbers exceeded the maximum. The maximum value is:"
 msgstr ""
 
 #. translators: [FRONT] [FRONT] Text to show when an option is required
-#: includes/class-yith-wapo-front.php:176
+#: includes/class-yith-wapo-front.php:175
 msgid "This option is required."
 msgstr ""
 
 #. translators: [FRONT] Text to show for maximum files allowed on add-on type
 #. Upload
-#: includes/class-yith-wapo-front.php:178
+#: includes/class-yith-wapo-front.php:177
 msgid ""
 "Maximum uploaded files allowed. The maximum number of files allowed is: "
 msgstr ""
 
 #. translators: [FRONT] Message giving the error when the file upload is not a
 #. supported extension
-#: includes/class-yith-wapo-front.php:180
+#: includes/class-yith-wapo-front.php:179
 msgid "Error - not supported extension!"
 msgstr ""
 
 #. translators: [FRONT] Message giving the error when the file has a hight size
-#: includes/class-yith-wapo-front.php:182
+#: includes/class-yith-wapo-front.php:181
 msgid "Error - file size for %s - max %d MB allowed!"
 msgstr ""
 
-#: includes/class-yith-wapo-front.php:613
+#: includes/class-yith-wapo-front.php:612
 msgid "This is not a product page!"
 msgstr "Esta não é uma página de produto!"
 
 #. translators: [ADMIN] Add-on name.
-#: includes/class-yith-wapo.php:185 views/addons/html_heading.php:19
+#: includes/class-yith-wapo.php:203 views/addons/html_heading.php:19
 msgid "Heading"
 msgstr ""
 
 #. translators: [ADMIN] Add-on name.
-#: includes/class-yith-wapo.php:190 views/addons/html_text.php:19
+#: includes/class-yith-wapo.php:208 views/addons/html_text.php:19
 msgid "Text"
 msgstr "Texto"
 
 #. translators: [ADMIN] Add-on name.
-#: includes/class-yith-wapo.php:195 views/addons/html_separator.php:19
+#: includes/class-yith-wapo.php:213 views/addons/html_separator.php:19
 msgid "Separator"
 msgstr ""
 
 #. translators: [ADMIN] Add-on name.
 #. translators: [ADMIN] Add-on name (option).
-#: includes/class-yith-wapo.php:212 includes/class-yith-wapo.php:214
+#: includes/class-yith-wapo.php:230 includes/class-yith-wapo.php:232
 msgid "Checkbox"
 msgstr "Caixa de selecção"
 
 #. translators: [ADMIN] Add-on name.
-#: includes/class-yith-wapo.php:219
+#: includes/class-yith-wapo.php:237
 msgid "Radio"
 msgstr ""
 
 #. translators: [ADMIN] Add-on name (option).
-#: includes/class-yith-wapo.php:221
+#: includes/class-yith-wapo.php:239
 #, fuzzy
 msgid "Radio button"
 msgstr "Radio Button"
 
 #. translators: [ADMIN] Add-on name.
-#: includes/class-yith-wapo.php:226
+#: includes/class-yith-wapo.php:244
 msgid "Input text"
 msgstr ""
 
 #. translators: [ADMIN] Add-on name (option).
-#: includes/class-yith-wapo.php:228
+#: includes/class-yith-wapo.php:246
 msgid "Input field"
 msgstr ""
 
 #. translators: [ADMIN] Add-on name.
 #. translators: [ADMIN] Add-on name (option).
-#: includes/class-yith-wapo.php:233 includes/class-yith-wapo.php:235
+#: includes/class-yith-wapo.php:251 includes/class-yith-wapo.php:253
 msgid "Textarea"
 msgstr "Área de texto"
 
 #. translators: [ADMIN] Add-on name.
 #. translators: [ADMIN] Add-on name (option).
-#: includes/class-yith-wapo.php:240 includes/class-yith-wapo.php:242
+#: includes/class-yith-wapo.php:258 includes/class-yith-wapo.php:260
 msgid "Color swatch"
 msgstr ""
 
 #. translators: [ADMIN] Add-on name.
 #. translators: [ADMIN] Add-on name (option).
-#: includes/class-yith-wapo.php:247 includes/class-yith-wapo.php:249
+#: includes/class-yith-wapo.php:265 includes/class-yith-wapo.php:267
 msgid "Number"
 msgstr "Número"
 
 #. translators: [ADMIN] Add-on name.
-#: includes/class-yith-wapo.php:254
+#: includes/class-yith-wapo.php:272
 msgid "Select"
 msgstr "Selecionar"
 
 #. translators: [ADMIN] Add-on name (option).
-#: includes/class-yith-wapo.php:256
+#: includes/class-yith-wapo.php:274
 #, fuzzy
 msgid "Select item"
 msgstr "Selecione os termos"
 
 #. translators: [ADMIN] Add-on name.
 #. translators: [ADMIN] Add-on name (option).
-#: includes/class-yith-wapo.php:261 includes/class-yith-wapo.php:263
+#: includes/class-yith-wapo.php:279 includes/class-yith-wapo.php:281
 msgid "Label or image"
 msgstr ""
 
 #. translators: [ADMIN] Add-on name.
 #. translators: [ADMIN] Add-on name (option).
-#: includes/class-yith-wapo.php:268 includes/class-yith-wapo.php:270
+#: includes/class-yith-wapo.php:286 includes/class-yith-wapo.php:288
 msgid "Product"
 msgstr ""
 
 #. translators: [ADMIN] Add-on name.
 #. translators: [ADMIN] Add-on name (option).
-#: includes/class-yith-wapo.php:275 includes/class-yith-wapo.php:277
+#: includes/class-yith-wapo.php:293 includes/class-yith-wapo.php:295
 msgid "Date"
 msgstr "Data"
 
 #. translators: [ADMIN] Add-on name.
-#: includes/class-yith-wapo.php:282
+#: includes/class-yith-wapo.php:300
 msgid "File upload"
 msgstr ""
 
 #. translators: [ADMIN] Add-on name (option).
-#: includes/class-yith-wapo.php:284
+#: includes/class-yith-wapo.php:302
 msgid "File uploader"
 msgstr ""
 
 #. translators: [ADMIN] Add-on name.
 #. translators: [ADMIN] Add-on name (option).
-#: includes/class-yith-wapo.php:289 includes/class-yith-wapo.php:291
+#: includes/class-yith-wapo.php:307 includes/class-yith-wapo.php:309
 #, fuzzy
 msgid "Color picker"
 msgstr "Colorpicker"
 
 #. translators: [ADMIN] Add-on name.
 #. translators: [ADMIN] Add-on name (option).
-#: includes/class-yith-wapo.php:296 includes/class-yith-wapo.php:298
+#: includes/class-yith-wapo.php:314 includes/class-yith-wapo.php:316
 msgid "HTML Heading"
 msgstr ""
 
 #. translators: [ADMIN] Add-on name.
 #. translators: [ADMIN] Add-on name (option).
-#: includes/class-yith-wapo.php:303 includes/class-yith-wapo.php:305
+#: includes/class-yith-wapo.php:321 includes/class-yith-wapo.php:323
 #, fuzzy
 msgid "HTML Text"
 msgstr "Texto"
 
 #. translators: [ADMIN] Add-on name.
 #. translators: [ADMIN] Add-on name (option).
-#: includes/class-yith-wapo.php:310 includes/class-yith-wapo.php:312
+#: includes/class-yith-wapo.php:328 includes/class-yith-wapo.php:330
 msgid "HTML Separator"
 msgstr ""
 
@@ -1716,31 +1716,31 @@ msgid ""
 "already have %2$s in your cart."
 msgstr ""
 
-#: includes/class-yith-wapo-cart.php:632
+#: includes/class-yith-wapo-cart.php:668
 #, fuzzy
 msgctxt "[FRONT] Label shown on YITH Bundle products when is added to cart."
 msgid "Base price"
 msgstr "Preço base"
 
-#: includes/class-yith-wapo-cart.php:741 includes/class-yith-wapo-cart.php:888
+#: includes/class-yith-wapo-cart.php:777 includes/class-yith-wapo-cart.php:924
 #: includes/yith-wapo-functions.php:151 includes/yith-wapo-functions.php:153
 #, fuzzy
 msgctxt "[FRONT] Show it in the cart page if the add-on has not a label set"
 msgid "Option"
 msgstr "Opções"
 
-#: includes/class-yith-wapo-cart.php:961
+#: includes/class-yith-wapo-cart.php:997
 #, fuzzy
 msgctxt "[FRONT] Default label on archive pages if the product has add-ons"
 msgid "Select options"
 msgstr "Ver opções"
 
-#: includes/class-yith-wapo-front.php:141
+#: includes/class-yith-wapo-front.php:140
 msgctxt "[FRONT] Percentage done when uploading a file on an add-on type File."
 msgid "done"
 msgstr ""
 
-#: includes/class-yith-wapo.php:990
+#: includes/class-yith-wapo.php:1008
 msgctxt "[ADMIN] String added to the add-on title when is duplicated"
 msgid "Copy"
 msgstr ""

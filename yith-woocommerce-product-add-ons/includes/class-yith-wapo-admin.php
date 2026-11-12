@@ -113,9 +113,9 @@ if ( ! class_exists( 'YITH_WAPO_Admin' ) ) {
 
 			// Save sortable items.
 			add_action( 'wp_ajax_sortable_blocks', array( $this, 'sortable_blocks' ) );
-			add_action( 'wp_ajax_nopriv_sortable_blocks', array( $this, 'sortable_blocks' ) );
+
 			add_action( 'wp_ajax_sortable_addons', array( $this, 'sortable_addons' ) );
-			add_action( 'wp_ajax_nopriv_sortable_addons', array( $this, 'sortable_addons' ) );
+
 
 			if ( 'yes' === get_option( 'yith_wapo_show_image_in_cart', 'no' ) ) {
 				add_filter( 'woocommerce_order_item_thumbnail', array( $this, 'order_item_thumbnail' ), 10, 2 );
@@ -405,7 +405,12 @@ if ( ! class_exists( 'YITH_WAPO_Admin' ) ) {
 		 * @return void
 		 */
 		public function sortable_blocks() {
-
+            if ( ! current_user_can( 'manage_woocommerce' ) ) {
+                wp_send_json_error(
+                    'You are not allowed to perform this action.',
+                    403
+                );
+            }
             check_ajax_referer( 'addons-nonce', 'security' );
 
             global $wpdb;
@@ -450,7 +455,12 @@ if ( ! class_exists( 'YITH_WAPO_Admin' ) ) {
 		 * @return void
 		 */
 		public function sortable_addons() {
-
+            if ( ! current_user_can( 'manage_woocommerce' ) ) {
+                wp_send_json_error(
+                    'You are not allowed to perform this action.',
+                    403
+                );
+            }
             check_ajax_referer( 'addons-nonce', 'security' );
 
 			global $wpdb;

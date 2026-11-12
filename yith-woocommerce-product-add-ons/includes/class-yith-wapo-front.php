@@ -69,7 +69,6 @@ if ( ! class_exists( 'YITH_WAPO_Front' ) ) {
 
             // Ajax upload file.
 			add_action( 'wp_ajax_yith_wapo_upload_file', array( $this, 'ajax_upload_file' ) );
-			add_action( 'wp_ajax_nopriv_yith_wapo_upload_file', array( $this, 'ajax_upload_file' ) );
 
             // Ajax update product price.
 			add_action( 'wp_ajax_update_totals_with_suffix', array( $this, 'update_totals_with_suffix' ) );
@@ -258,6 +257,8 @@ if ( ! class_exists( 'YITH_WAPO_Front' ) ) {
 		 */
 		public function ajax_upload_file() {
 
+            check_ajax_referer( 'addons-nonce', 'security' );
+
 			if ( ! function_exists( 'wp_handle_upload' ) ) {
 				require_once ABSPATH . 'wp-admin/includes/file.php';
 			}
@@ -294,8 +295,6 @@ if ( ! class_exists( 'YITH_WAPO_Front' ) ) {
 		function modify_upload_images_dir( $dir ) {
 
             if ( isset( $_REQUEST['action'] ) && 'yith_wapo_upload_file' === $_REQUEST['action'] ) {
-
-                check_admin_referer( 'addons-nonce', 'security' );
 
                 $folder_name = get_option( 'yith_wapo_uploads_folder', 'yith_advanced_product_options' );
 

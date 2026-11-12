@@ -149,6 +149,24 @@ if ( ! class_exists( 'YITH_WAPO' ) ) {
 			$save_block_button = isset( $_REQUEST['save-block-button'] ) ? 1 : 0;
 
 			if ( $action && $nonce ) {
+                $admin_only_actions = array(
+                    'db-check',
+                    'control_debug_options',
+                );
+
+                $required_capability = in_array(
+                    $action,
+                    $admin_only_actions,
+                    true
+                ) ? 'manage_options' : 'manage_woocommerce';
+
+                if ( ! current_user_can( $required_capability ) ) {
+                    wp_die(
+                        'You are not allowed to perform this action.',
+                        '',
+                        array( 'response' => 403 )
+                    );
+                }
 				$block_id = sanitize_key( $_REQUEST['block_id'] ?? '' );
 				$addon_id = sanitize_key( $_REQUEST['addon_id'] ?? '' );
 				if ( 'save-block' === $action && $save_block_button ) {
