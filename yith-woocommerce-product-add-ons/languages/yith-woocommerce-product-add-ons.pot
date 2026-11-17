@@ -2,9 +2,9 @@
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: YITH WooCommerce Product Add-ons & Extra Options 4.35.1\n"
+"Project-Id-Version: YITH WooCommerce Product Add-ons & Extra Options 4.35.2\n"
 "Report-Msgid-Bugs-To: YITH <plugins@yithemes.com>\n"
-"POT-Creation-Date: 2026-11-12 12:47:45+00:00\n"
+"POT-Creation-Date: 2026-11-17 10:51:31+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -289,7 +289,7 @@ msgstr ""
 msgid "Attached file"
 msgstr ""
 
-#: includes/class-yith-wapo-cart.php:1541
+#: includes/class-yith-wapo-cart.php:1609
 #. translators: [ADMIN] Message added to order notes when add-on type Product
 #. has stock
 msgid "Stock levels reduced for addons type product:"

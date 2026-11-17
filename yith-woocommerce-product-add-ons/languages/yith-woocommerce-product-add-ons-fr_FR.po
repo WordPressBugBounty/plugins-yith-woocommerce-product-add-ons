@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: YITH WooCommerce Products Add-ons\n"
 "Report-Msgid-Bugs-To: YITH <plugins@yithemes.com>\n"
-"POT-Creation-Date: 2026-11-12 12:47:45+00:00\n"
+"POT-Creation-Date: 2026-11-17 10:51:31+00:00\n"
 "PO-Revision-Date: 2021-07-21 17:09+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -291,7 +291,7 @@ msgstr "Pièce jointe"
 
 #. translators: [ADMIN] Message added to order notes when add-on type Product
 #. has stock
-#: includes/class-yith-wapo-cart.php:1541
+#: includes/class-yith-wapo-cart.php:1609
 msgid "Stock levels reduced for addons type product:"
 msgstr ""
 

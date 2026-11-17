@@ -1519,6 +1519,38 @@ if ( ! class_exists( 'YITH_WAPO_Cart' ) ) {
 						continue;
 					}
 
+                    global $wpdb;
+
+                    $base_product_id = absint(
+                        apply_filters( 'yith_wapo_get_original_product_id', $item->get_product_id() )
+                    );
+                    $variation_id = absint( $item->get_variation_id() );
+                    $variation_id = $variation_id
+                        ? absint( apply_filters( 'yith_wapo_get_original_product_id', $variation_id ) )
+                        : '';
+
+                    $block_ids = YITH_WAPO_DB()->yith_wapo_get_blocks_by_product(
+                        $base_product_id,
+                        $variation_id,
+                        'yes'
+                    );
+                    $block_ids = array_values( array_filter( array_map( 'absint', (array) $block_ids ) ) );
+
+                    $allowed_addon_ids = array();
+
+                    if ( ! empty( $block_ids ) ) {
+                        $placeholders = implode( ', ', array_fill( 0, count( $block_ids ), '%d' ) );
+                        $addons_table = $wpdb->prefix . YITH_WAPO_DB()::YITH_WAPO_ADDONS;
+
+                        $query = $wpdb->prepare(
+                            "SELECT id FROM {$addons_table} WHERE visibility = 1 AND block_id IN ({$placeholders})",
+                            $block_ids
+                        );
+
+                        $allowed_addon_ids = array_map( 'absint', (array) $wpdb->get_col( $query ) );
+                    }
+
+                    $processed_options = array();
 					$meta_data = wc_get_order_item_meta( $item_id, '_ywapo_meta_data', true );
 
 					if ( $meta_data && is_array( $meta_data ) ) {
@@ -1532,14 +1564,50 @@ if ( ! class_exists( 'YITH_WAPO_Cart' ) ) {
 										$value   = stripslashes( $value );
 										$explode = explode( '-', $value );
 
-										if ( isset( $explode[0] ) && 'product' === $explode[0] ) {
-											$quantity_data = wc_get_order_item_meta( $item_id, '_ywapo_product_addon_qty', true );
-											$product_id    = $explode[1];
-											$quantity      = $quantity_data[ $key ] ?? 1;
-											$stock         = wc_update_product_stock( $product_id, $quantity, 'decrease' );
-											// translators: [ADMIN] Message added to order notes when add-on type Product has stock
-											$order->add_order_note( __( 'Stock levels reduced for addons type product:', 'yith-woocommerce-product-add-ons' ) . ' ' . $product_id );
-										}
+                                        if ( isset( $explode[0], $explode[1] ) && 'product' === $explode[0] && ctype_digit( $explode[1] ) ) {
+
+                                            $ids = YITH_WAPO::get_instance()->split_addon_and_option_ids( $key, $value );
+                                            $addon_id = absint( $ids['addon_id'] ?? 0 );
+                                            $option_id = $ids['option_id'] ?? '';
+
+                                            if ( ! $addon_id || ! in_array( $addon_id, $allowed_addon_ids, true ) ) {
+                                                continue;
+                                            }
+
+                                            $info = yith_wapo_get_option_info( $addon_id, $option_id, false );
+                                            $configured_product_id = absint( $info['product_id'] ?? 0 );
+
+                                            if (
+                                                'product' !== ( $info['addon_type'] ?? '' ) ||
+                                                ! $configured_product_id ||
+                                                $configured_product_id !== absint( $explode[1] )
+                                            ) {
+                                                continue;
+                                            }
+
+                                            $option_key = $addon_id . '-' . $option_id;
+                                            if ( isset( $processed_options[ $option_key ] ) ) {
+                                                continue;
+                                            }
+
+                                            $quantity_data = wc_get_order_item_meta( $item_id, '_ywapo_product_addon_qty', true );
+                                            $raw_quantity = is_array( $quantity_data ) ? ( $quantity_data[ $key ] ?? 1 ) : 1;
+                                            $quantity = is_scalar( $raw_quantity ) && is_numeric( $raw_quantity )
+                                                ? max( 0, (int) $raw_quantity )
+                                                : 1;
+
+                                            if ( 0 === $quantity ) {
+                                                continue;
+                                            }
+
+                                            $processed_options[ $option_key ] = true;
+                                            $product_id = $configured_product_id;
+
+                                            $stock = wc_update_product_stock( $product_id, $quantity, 'decrease' );
+
+                                            // translators: [ADMIN] Message added to order notes when add-on type Product has stock
+                                            $order->add_order_note( __( 'Stock levels reduced for addons type product:', 'yith-woocommerce-product-add-ons' ) . ' ' . $product_id );
+                                        }
 									}
 								}
 							}
